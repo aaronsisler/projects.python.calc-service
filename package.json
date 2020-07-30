@@ -1,0 +1,19 @@
+{
+  "name": "add-two-integers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sls deploy --config=serverless.beta.yml",
+    "create-domain:beta": "sls create_domain --config=serverless.beta.yml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Sisler",
+  "license": "ISC",
+  "dependencies": {
+    "serverless-domain-manager": "^4.2.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.77.1"
+  }
+}

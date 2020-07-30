@@ -1,0 +1,44 @@
+service: python-apig-lambda-poc
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: beta
+  region: us-east-1
+  role: arn:aws:iam::654918520080:role/APIG-LAMBDA-DDB
+  usagePlan:
+    quota:
+      limit: 500
+      offset: 0
+      period: MONTH
+    throttle:
+      burstLimit: 20
+      rateLimit: 10
+  environment:
+    NODE_ENV: beta
+
+functions:
+  health:
+    handler: src/health_handler.main
+    description: Health endpoint
+    events:
+      - http:
+          path: /health
+          method: get
+  calc:
+    handler: src/calc_handler.main
+    description: Calc endpoint that receives two values and sums them
+    events:
+      - http:
+          path: /calc
+          method: post
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: python.otterandcow.com
+    basePath: "beta"
+    stage: beta
+    createRoute53Record: true
