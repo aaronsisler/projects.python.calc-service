@@ -1,13 +1,12 @@
 import json
-import traceback
 
 
 def main(event, context):
     try:
-        rawBody = event['body']
-        body = json.loads(rawBody)
+        raw_body = event['body']
+        body = json.loads(raw_body)
 
-        if('value_1' not in body or 'value_2' not in body):
+        if 'value_1' not in body or 'value_2' not in body:
             return {
                 "statusCode": 400,
                 "body": json.dumps('Please provide 2 values to add')
@@ -22,7 +21,7 @@ def main(event, context):
             "statusCode": 200,
             "body": json.dumps(result)
         }
-    except:
+    except Exception as e:
         return {
             "statusCode": 567,
             "body": json.dumps('Something went wrong')

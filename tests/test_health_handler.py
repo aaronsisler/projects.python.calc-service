@@ -1,6 +1,6 @@
 import unittest
 
-import health_handler
+from src import health_handler
 
 
 class TestHealthHandler(unittest.TestCase):
