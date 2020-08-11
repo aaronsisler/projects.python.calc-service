@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rm -rf ./target",
+    "build": "mvn package",
     "deploy": "sls deploy --config=serverless.beta.yml",
     "create-domain:beta": "sls create_domain --config=serverless.beta.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
