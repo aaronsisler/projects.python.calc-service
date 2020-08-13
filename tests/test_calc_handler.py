@@ -1,5 +1,5 @@
 import unittest
-from src import calc_handler
+import calc_handler
 
 
 class TestCalcHandler(unittest.TestCase):

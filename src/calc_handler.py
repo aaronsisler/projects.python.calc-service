@@ -1,4 +1,5 @@
 import json
+from calc import add
 
 
 def main(event, context):
@@ -15,7 +16,7 @@ def main(event, context):
         value_1 = body['value_1']
         value_2 = body['value_2']
 
-        result = value_1 + value_2
+        result = add(value_1, value_2)
 
         return {
             "statusCode": 200,
