@@ -6,29 +6,4 @@
     <version>0.1.0</version>
     <name>Hypo Drop Off Service</name>
     <packaging>pom</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>install-assembly</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-                <configuration>
-                  <appendAssemblyId>false</appendAssemblyId>
-                  <descriptors>
-                    <descriptor>assembly.xml</descriptor>
-                  </descriptors>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-    </build>
 </project>

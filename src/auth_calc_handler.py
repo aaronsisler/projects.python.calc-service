@@ -1,8 +1,17 @@
 import json
 from src.calc import add
+from src.token_service import TokenService
 
 
 def main(event, context):
+    try:
+        raw_headers = event["headers"]
+        headers = json.loads(raw_headers)
+        token = headers["Authorization"]
+        TokenService(token).validate_token()
+    except Exception as e:
+        return {"status": 401, "body": json.dumps("Unauthorized")}
+
     try:
         raw_body = event['body']
         body = json.loads(raw_body)

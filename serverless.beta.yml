@@ -1,4 +1,4 @@
-service: python-apig-lambda-poc
+service: python-add-two-integers
 
 provider:
   name: aws
@@ -32,6 +32,14 @@ functions:
       - http:
           path: /calc
           method: post
+  auth:
+    handler: src/auth_calc_handler.main
+    description: Authenticated calc endpoint that receives two values and sums them
+    events:
+      - http:
+          path: /auth
+          method: post
+
 
 plugins:
   - serverless-domain-manager
