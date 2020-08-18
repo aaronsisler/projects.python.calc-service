@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf ./dist && rm -rf ./build && rm -rf ./add_two_integers.egg-info",
-    "prebuild": "rm -rf ./target",
-    "build": "mvn package",
+    "clean": "rm -rf ./dist && rm -rf bundle.zip",
+    "build": "python package.py",
     "deploy:beta": "sls deploy --config=serverless.beta.yml",
     "domain:beta": "sls create_domain --config=serverless.beta.yml",
     "test": "echo \"Error: no test specified\" && exit 1"

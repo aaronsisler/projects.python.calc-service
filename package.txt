@@ -1,0 +1,11 @@
+rm -rf ship-it
+mkdir ship-it
+cp -r .venv/lib/python*/site-packages/ dist/
+rm -rf ./ship-it/__pycache__
+find ship-it -maxdepth 1 -type f -delete
+cp -r src/*.py ship-it/
+zip -r thing.zip ./ship-it
+
+Things to figure out
+pipenv installed on machine?
+If not how can we pip install all the required pieces each time?
