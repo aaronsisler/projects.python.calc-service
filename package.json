@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./dist && rm -rf ./build && rm -rf ./add_two_integers.egg-info",
     "prebuild": "rm -rf ./target",
     "build": "mvn package",
     "deploy:beta": "sls deploy --config=serverless.beta.yml",
