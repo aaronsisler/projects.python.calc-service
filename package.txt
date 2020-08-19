@@ -9,3 +9,14 @@ zip -r thing.zip ./ship-it
 Things to figure out
 pipenv installed on machine?
 If not how can we pip install all the required pieces each time?
+
+Installs dependencies to project (like node_modules)
+mkdir .venv && pipenv install
+Installs dev deps to project
+pipenv install --dev
+Clears out the pipenv (i.e. remove node_modules)
+pipenv --rm
+Add to "app" packages
+pipenv install requests
+Add to dev-packages
+pipenv install -d flask
