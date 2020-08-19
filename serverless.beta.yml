@@ -19,21 +19,21 @@ provider:
 
 functions:
   health:
-    handler: src/health_handler.main
+    handler: dist/health_handler.main
     description: Health endpoint
     events:
       - http:
           path: /health
           method: get
   calc:
-    handler: src/calc_handler.main
+    handler: dist/calc_handler.main
     description: Calc endpoint that receives two values and sums them
     events:
       - http:
           path: /calc
           method: post
   auth:
-    handler: src/auth_calc_handler.main
+    handler: dist/auth_calc_handler.main
     description: Authenticated calc endpoint that receives two values and sums them
     events:
       - http:

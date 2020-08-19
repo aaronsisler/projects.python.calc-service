@@ -17,7 +17,7 @@ def hello_world():
     except Exception as e:
         return {
             "status": 401,
-            "response": "Unauthorized"
+            "response": str(e)
         }
 
     return validation
